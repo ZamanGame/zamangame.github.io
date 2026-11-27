@@ -254,5 +254,4 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
   .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
   .phead h1{font-size:clamp(26px,7vw,34px)}
 }
-.dl-size{display:inline-flex;align-items:baseline;gap:10px}
-.dl-size .sep{font-weight:400}
+.dl-size{display:inline-flex;align-items:baseline}
