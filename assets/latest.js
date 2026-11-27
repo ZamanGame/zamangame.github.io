@@ -17,7 +17,7 @@
 
   function sizeLabel(bytes) {
     if (!bytes || !(bytes > 0)) return '';
-    var mb = Math.round(bytes / (1024 * 1024));
+    var mb = Math.round(bytes / 1000000);
     if (!(mb > 0)) return '';
     return '· ' + arNum(mb) + ' ميجا';
   }
