@@ -7,7 +7,7 @@
 <title>ألعاب زمان — كل ألعابك القديمة في مكان واحد</title>
 <meta name="description" content="زمان جيمز: مكتبة واحدة بتلمّ كل ألعابك القديمة على ويندوز، من أتاري لحد إكس بوكس 360. مجاني من سنا للبرمجيات.">
 <meta property="og:title" content="ألعاب زمان — كل ألعابك القديمة في مكان واحد">
-<meta property="og:description" content="مكتبة واحدة لكل أجهزتك القديمة على ويندوز. مجاني من سنا للبرمجيات.">
+<meta property="og:description" content="زمان جيمز: مكتبة واحدة بتلمّ كل ألعابك القديمة على ويندوز، من أتاري لحد إكس بوكس 360. مجاني من سنا للبرمجيات.">
 <meta property="og:image" content="https://zamangame.github.io/assets/og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -16,228 +16,29 @@
 <meta name="twitter:image" content="https://zamangame.github.io/assets/og.webp">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/logo.webp" type="image/webp">
-<style>
-@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/fonts/cairo-arabic.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
-@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/fonts/cairo-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}
-@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(assets/fonts/cairo-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'Ruqaa';font-weight:700;font-display:swap;src:url(assets/fonts/ArefRuqaa-Bold.ttf) format('truetype');}
-:root{
-  --bg:#070c1a; --bg2:#0a1226; --card:#101a33; --card2:#0e1730;
-  --line:rgba(120,160,230,.14); --line2:rgba(120,160,230,.22);
-  --txt:#e9eefb; --mut:#93a3c4; --dim:#5f6f95;
-  --acc:#4da3ff; --acc2:#2b7fd4; --amber:#f2b05a; --ok:#5ad6a0; --warn:#ff8f7a;
-  --rad:18px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.75;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:var(--acc);text-decoration:none}
-img,video{max-width:100%;display:block}
-.wrap{max-width:1180px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
-::selection{background:rgba(77,163,255,.35)}
-h1,h2,h3{line-height:1.35;font-weight:900}
-.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:999px;padding:5px 14px;font-size:13.5px;color:var(--mut);background:rgba(16,26,51,.6)}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;border-radius:14px;padding:13px 26px;font-size:16.5px;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease;cursor:pointer}
-.btn:hover{transform:translateY(-2px)}
-.btn-p{background:linear-gradient(135deg,#3f95f2,#2b7fd4);color:#fff;box-shadow:0 10px 30px -10px rgba(43,127,212,.55)}
-.btn-g{border-color:var(--line2);color:var(--txt);background:rgba(16,26,51,.55)}
-.btn-g:hover{border-color:var(--acc)}
-.sec{padding:96px 0 30px}
-.sec-tag{font-family:'Ruqaa';color:var(--amber);font-size:15px;letter-spacing:0}
-.sec-no{color:var(--dim);font-weight:900;font-size:14px;letter-spacing:2px}
-.sec h2{font-size:clamp(30px,4.6vw,46px);margin:6px 0 12px}
-.sec-sub{color:var(--mut);max-width:640px;font-size:17px}
-/* ===== header ===== */
-.hdr{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,12,26,.72);border-bottom:1px solid var(--line)}
-.hdr .wrap{display:flex;align-items:center;gap:26px;height:68px}
-.logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:19px;color:var(--txt)}
-.logo svg{width:34px;height:34px}
-.nav{display:flex;gap:22px;margin-inline-start:auto;font-size:15px;font-weight:700}
-.nav a{color:var(--mut)}
-.nav a:hover{color:var(--txt)}
-.hdr .btn{padding:9px 20px;font-size:14.5px}
-/* ===== hero ===== */
-.hero{position:relative;padding:88px 0 40px;overflow:hidden;background:radial-gradient(1100px 500px at 85% -10%,rgba(43,127,212,.22),transparent 60%),radial-gradient(700px 420px at 8% 30%,rgba(242,176,90,.07),transparent 60%),var(--bg2)}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.wm{position:absolute;inset-inline-start:-2%;top:-4%;font-family:'Ruqaa';font-size:clamp(200px,26vw,380px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(120,160,230,.13);pointer-events:none;user-select:none}
-.hero h1{font-size:clamp(38px,5.2vw,62px);margin:18px 0 16px}
-.hero h1 .hl{position:relative;color:var(--acc);white-space:nowrap}
-.hero h1 .hl svg{position:absolute;inset-inline:0;bottom:-8px;width:100%;height:12px}
-.hero p.lead{color:var(--mut);font-size:18.5px;max-width:520px}
-.cta-row{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
-.stats{display:flex;gap:30px;margin-top:36px;flex-wrap:wrap}
-.stat b{font-size:26px;font-weight:900;color:var(--txt);display:block}
-.stat span{color:var(--dim);font-size:13.5px}
-.vid-card{position:relative;transform:rotate(-1.6deg)}
-.vid-card::after{content:'';position:absolute;inset:-14px -10px auto auto;width:120px;height:120px;background:radial-gradient(circle,rgba(77,163,255,.35),transparent 70%);filter:blur(10px);z-index:-1}
-.win{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
-.win-bar{display:flex;align-items:center;gap:7px;background:#101a33;padding:10px 14px;border-bottom:1px solid var(--line)}
-.win-bar i{width:11px;height:11px;border-radius:50%;display:block}
-.win-bar i:nth-child(1){background:#ff5f57}.win-bar i:nth-child(2){background:#febc2e}.win-bar i:nth-child(3){background:#28c840}
-.win-bar span{margin-inline-start:auto;color:var(--dim);font-size:12px;font-weight:700}
-.vid-note{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
-/* ===== ticker ===== */
-.ticker{border-block:1px solid var(--line);background:rgba(10,18,38,.6);padding:16px 0;overflow:hidden}
-.ticker-track{display:flex;gap:14px;width:max-content;animation:tk 42s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-@keyframes tk{to{transform:translateX(-50%)}}
-.tk-item{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 18px;font-size:14.5px;font-weight:700;color:var(--mut);white-space:nowrap}
-/* ===== idea ===== */
-.idea{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start;margin-top:26px}
-.idea-txt{font-size:19px;color:#c9d4ee}
-.idea-txt b{color:var(--txt)}
-.pillars{display:grid;gap:12px}
-.pillar{display:flex;gap:13px;align-items:flex-start;border:1px solid var(--line);background:var(--card2);border-radius:var(--rad);padding:16px 18px}
-.pillar .ic{flex:none;width:38px;height:38px;border-radius:11px;background:rgba(77,163,255,.12);display:grid;place-items:center;color:var(--acc)}
-.pillar b{display:block;font-size:15.5px}
-.pillar span{color:var(--mut);font-size:13.5px;line-height:1.65}
-/* ===== features ===== */
-.feat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:40px}
-.feat{border:1px solid var(--line);background:linear-gradient(180deg,var(--card),var(--card2));border-radius:var(--rad);padding:24px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
-.feat:hover{border-color:var(--line2);transform:translateY(-3px)}
-.feat.big{grid-column:span 4}
-.feat.half{grid-column:span 3}
-.feat.third{grid-column:span 2}
-.feat h3{font-size:20px;margin:14px 0 8px}
-.feat p{color:var(--mut);font-size:14.5px}
-.feat .ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(77,163,255,.12);color:var(--acc)}
-.feat.amber .ic{background:rgba(242,176,90,.12);color:var(--amber)}
-.feat .shot{margin:-24px -24px 18px;border-bottom:1px solid var(--line)}
-.feat .shot img{width:100%}
-/* ===== systems ===== */
-.sys-legend{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 26px}
-.sys-group{margin-bottom:22px}
-.sys-group h4{color:var(--dim);font-size:14px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:9px}
-.sys-row{display:flex;flex-wrap:wrap;gap:11px}
-.sys{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--card2);border-radius:14px;padding:9px 16px 9px 13px;font-weight:800;font-size:15px}
-.sys small{display:block;color:var(--dim);font-weight:600;font-size:11.5px}
-.sys-note{border:1px dashed var(--line2);border-radius:var(--rad);padding:16px 20px;color:var(--mut);font-size:14.5px;margin-top:8px;background:rgba(16,26,51,.35)}
-.sys-note b{color:var(--warn)}
-/* ===== steps ===== */
-.steps{margin-top:38px;display:grid;gap:0}
-.step{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);position:relative}
-.step:last-child{border-bottom:0}
-.step-n{width:52px;height:52px;border-radius:16px;border:1px solid var(--line2);background:var(--card);display:grid;place-items:center;font-weight:900;font-size:19px;color:var(--acc);font-family:'Cairo'}
-.step h3{font-size:19px;margin-bottom:5px}
-.step p{color:var(--mut);font-size:15px;max-width:720px}
-.step code{background:rgba(77,163,255,.1);border:1px solid var(--line);border-radius:7px;padding:1px 8px;font-size:13px;color:#bcd6ff;direction:ltr;display:inline-block}
-/* ===== videos ===== */
-.vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
-.vid-item{border:1px solid var(--line);background:var(--card2);border-radius:var(--rad);overflow:hidden}
-.vid-item .pad{padding:18px 20px}
-.vid-item h3{font-size:17px}
-.vid-item p{color:var(--mut);font-size:13.5px;margin-top:4px}
-.vid-soon{border:1px dashed var(--line2);display:grid;place-items:center;min-height:210px;color:var(--dim);text-align:center;padding:20px;font-size:14.5px}
-.demo-tag{display:inline-block;margin-top:8px;font-size:11.5px;color:var(--amber,#f59e0b);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
-/* ===== faq ===== */
-.faq{max-width:820px;margin-top:34px}
-.faq details{border:1px solid var(--line);background:var(--card2);border-radius:var(--rad);margin-bottom:12px;overflow:hidden}
-.faq summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:800;font-size:16.5px;display:flex;align-items:center;gap:12px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';margin-inline-start:auto;color:var(--acc);font-size:22px;font-weight:400;transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq .ans{padding:0 22px 20px;color:var(--mut);font-size:15px}
-/* ===== cta / footer ===== */
-.banner{margin:90px 0 0;border-radius:26px;border:1px solid var(--line2);background:radial-gradient(600px 300px at 80% 0%,rgba(77,163,255,.18),transparent 60%),linear-gradient(180deg,#0e1730,#0a1226);padding:56px 40px;text-align:center;position:relative;overflow:hidden}
-.banner h2{font-size:clamp(28px,4vw,42px)}
-.banner p{color:var(--mut);margin:10px 0 26px}
-footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;color:var(--dim);font-size:13.5px}
-.foot-grid{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;justify-content:space-between}
-.foot-links{display:flex;gap:20px;flex-wrap:wrap}
-.foot-legal{max-width:640px;line-height:1.8;margin-top:18px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-.reveal.on{opacity:1;transform:none}
-@media(max-width:980px){
-  .hero .wrap{grid-template-columns:1fr}
-  .vid-card{transform:none}
-  .idea{grid-template-columns:1fr}
-  .feat.big,.feat.half,.feat.third{grid-column:span 6}
-  .vid-grid{grid-template-columns:1fr}
-  .nav{display:none}
-  .sec{padding:70px 0 20px}
-}
-
-/* ===== covers strip ===== */
-.covers-sec{padding:8px 0 10px}
-.covers-note{font-size:13.5px;color:var(--dim);text-align:center;padding:16px 26px 14px}
-.covers-note b{color:var(--mut)}
-.covers{overflow:hidden;padding:2px 0 22px}
-.covers-track{display:flex;gap:16px;width:max-content;animation:tk 60s linear infinite}
-.covers:hover .covers-track{animation-play-state:paused}
-.covers-track img{height:150px;width:auto;border-radius:10px;border:1px solid var(--line);box-shadow:0 12px 30px -12px rgba(0,0,0,.7);transform:rotate(-1deg)}
-.covers-track img:nth-child(2n){transform:rotate(1.2deg)}
-/* ===== downloads ===== */
-.dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
-.dl{border:1px solid var(--line);background:linear-gradient(180deg,var(--card),var(--card2));border-radius:var(--rad);padding:24px}
-.dl h3{font-size:19px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.dl p{color:var(--mut);font-size:14.5px}
-.dl .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.dl-file{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:13px;padding:12px 16px;margin-top:10px;background:rgba(10,18,38,.5)}
-.dl-file b{font-size:15px}
-.dl-file span{color:var(--dim);font-size:12.5px;display:block}
-.dl-file a{flex:none}
-.emu-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
-.emu-links a{border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13px;color:var(--mut);background:rgba(10,18,38,.5)}
-.emu-links a:hover{color:var(--txt);border-color:var(--acc)}
-@media(max-width:980px){.dl-grid{grid-template-columns:1fr}}
-
-/* ===== games library ===== */
-.con-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:34px}
-.con{border:1px solid var(--line);background:linear-gradient(180deg,var(--card),var(--card2));border-radius:var(--rad);padding:20px 18px 16px;cursor:pointer;text-align:center;transition:transform .18s,border-color .18s;position:relative;overflow:hidden}
-.con:hover{transform:translateY(-4px);border-color:var(--c,#4da3ff)}
-.con .wm2{font-weight:900;font-size:19px;line-height:1.3;color:var(--c,#4da3ff);letter-spacing:.4px;min-height:50px;display:flex;align-items:center;justify-content:center}
-.con-art{height:124px;display:flex;align-items:center;justify-content:center;margin:2px 0 4px}
-.con-shot{max-width:100%;max-height:124px;object-fit:contain;filter:drop-shadow(0 10px 12px rgba(0,0,0,.5))}
-.con-logo{height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
-.con-logo img{max-width:130px;max-height:44px;object-fit:contain;filter:drop-shadow(0 3px 6px rgba(0,0,0,.65))}
-.m-visual{flex:0 0 140px}
-.m-head .con-art{height:104px;margin:0}
-.m-head .con-logo{height:auto;margin:0}
-.m-head .con-logo img{max-width:100px;max-height:38px}
-.con .ar{color:var(--txt);font-weight:800;font-size:15px;margin-top:8px}
-.con .st{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
-.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(4,8,18,.82);backdrop-filter:blur(8px)}
-.modal.open{display:flex}
-.modal-box{background:linear-gradient(180deg,#101a33,#0b1330);border:1px solid var(--line2);border-radius:22px;max-width:760px;width:100%;max-height:88vh;overflow:auto;padding:30px;position:relative}
-.modal-x{position:absolute;top:16px;inset-inline-start:16px;width:36px;height:36px;border-radius:11px;border:1px solid var(--line2);background:rgba(16,26,51,.7);color:var(--mut);font-size:19px;cursor:pointer;display:grid;place-items:center}
-.modal-x:hover{color:var(--txt)}
-.m-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;padding-inline-end:44px}
-.m-head .wm3{font-weight:900;font-size:26px}
-.m-body{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:start}
-.m-cover{width:170px;border-radius:13px;border:1px solid var(--line2);box-shadow:0 16px 40px -14px rgba(0,0,0,.75)}
-.m-cover.ph{aspect-ratio:3/4;display:grid;place-items:center;background:rgba(77,163,255,.06);font-weight:900;font-size:15px;text-align:center;padding:10px}
-.m-rows{display:grid;gap:10px}
-.m-row{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
-.m-row b{color:var(--dim);min-width:104px;font-size:13px;padding-top:2px}
-.m-row .v{color:#c9d4ee}
-.m-row .v code{background:rgba(77,163,255,.1);border:1px solid var(--line);border-radius:6px;padding:0 7px;font-size:12px;direction:ltr;display:inline-block;margin:1px}
-.m-guide{margin-top:16px;border:1px dashed var(--line2);border-radius:13px;padding:13px 16px;color:var(--mut);font-size:14px;background:rgba(16,26,51,.4)}
-.m-guide b{color:var(--amber)}
-@media(max-width:640px){.m-body{grid-template-columns:1fr}.m-cover{width:130px}}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <header class="hdr">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="ألعاب زمان">
+    <a class="logo" href="index.html" aria-label="ألعاب زمان">
       <img src="assets/logo.webp" alt="" style="width:34px;height:34px;border-radius:9px">
       ألعاب زمان
     </a>
-    <nav class="nav">
-      <a href="#features">المميزات</a>
-      <a href="#systems">الأجهزة</a>
-      <a href="#library">مكتبة الألعاب</a>
-      <a href="#guide">الشرح</a>
-      <a href="#downloads">التحميلات</a>
-      <a href="#videos">الفيديوهات</a>
-      <a href="#faq">أسئلة شائعة</a>
+    <button class="nav-toggle" id="navToggle" aria-label="القائمة" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="features.html">المميزات</a>
+      <a href="systems.html">الأجهزة</a>
+      <a href="library.html">مكتبة الألعاب</a>
+      <a href="guide.html">الشرح</a>
+      <a href="downloads.html">التحميلات</a>
+      <a href="videos.html">الفيديوهات</a>
+      <a href="faq.html">أسئلة شائعة</a>
     </nav>
-    <a class="btn btn-p" href="https://github.com/ZamanGame/zamangames-releases/releases/latest" target="_blank" rel="noopener">حمّل مجانًا</a>
+    <a class="btn btn-p hdr-cta" href="downloads.html">حمّل مجانًا</a>
   </div>
 </header>
-
 <section class="hero" id="top">
   <div class="wm" aria-hidden="true">زمان</div>
   <div class="wrap">
@@ -250,7 +51,7 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
         </a>
         <a class="btn btn-g" href="https://github.com/ZamanGame/zamangames-releases/releases/latest/download/ZamanGames-Setup-1.3.9.exe" target="_blank" rel="noopener">النسخة الخفيفة (Lite)</a>
-        <a class="btn btn-g" href="#guide">شوف الشرح</a>
+        <a class="btn btn-g" href="guide.html">شوف الشرح</a>
       </div>
       <div class="stats">
         <div class="stat"><b>١٥</b><span>جهاز مدعوم</span></div>
@@ -277,7 +78,7 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
 </section>
 <section class="sec" id="idea">
   <div class="wrap">
-    <div class="sec-no">٠١ · الفكرة</div>
+    <div class="sec-no">الفكرة</div>
     <h2>إيه هو زمان جيمز؟</h2>
     <div class="idea">
       <p class="idea-txt reveal">برنامج ويندوز بيجيب كل ألعابك القديمة تحت سقف واحد. إنت بتقوله فولدر ألعابك فين، وهو <b>بيلمّها ويرتّبها بالأغلفة والأجهزة</b>، ولما تدوس "العب" بيفتح لك المحاكي المناسب على طول. في <b>النسخة الكاملة</b> المشغّلات جوه ملف التثبيت نفسه وجاهزة من أول تشغيل؛ وفي <b>النسخة الخفيفة</b> بتتنزّل من مواقعها الرسمية بضغطة واحدة وبنتأكد من البصمة قبل التثبيت. إنت صاحب مكتبتك: البرنامج <b>مبينزّلش ألعاب ولا ملفات BIOS</b> — دي بتجيبها إنت، وهو بيساعدك تعرف الناقص.</p>
@@ -290,229 +91,39 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
   </div>
 </section>
 
-<section class="sec" id="features">
+<section class="sec" id="explore">
   <div class="wrap">
-    <div class="sec-no">٠٢ · المميزات</div>
-    <h2>ليه هتحبه؟</h2>
-    <p class="sec-sub">مش مجرد قائمة ألعاب — ده بيت كامل لمكتبتك، من أول الغلاف لحد زرار التشغيل.</p>
-    <div class="feat-grid">
-      <div class="feat big reveal">
-        <div class="shot"><img src="assets/app-home.webp" alt="الشاشة الرئيسية لزمان جيمز" loading="lazy"></div>
-        <h3>مكتبة واحدة تلمّ كل حاجة</h3>
-        <p>كل ألعابك مرتّبة بالأغلفة، وفلاتر حسب الجهاز، وبحث سريع، وشريط "كمّل اللعب" بيرجعك لآخر حتة وقفت عندها. شغال بالكيبورد والماوس ويد التحكم.</p>
-      </div>
-      <div class="feat third reveal">
-        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></div>
-        <h3>المحاكيات جاهزة أو بضغطة</h3>
-        <p>النسخة الكاملة فيها ١٤ محاكي من مصادرها الرسمية جاهزين من أول تشغيل — Stella وRetroArch وDuckStation وPCSX2 وPPSSPP وRPCS3 وEden وغيرهم. والنسخة الخفيفة بيثبّتهم بضغطة واحدة مع تحقق البصمة.</p>
-      </div>
-      <div class="feat third amber reveal">
-        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h10M18 8h2M4 16h2M10 16h10"/><circle cx="16" cy="8" r="2.5"/><circle cx="7" cy="16" r="2.5"/></svg></div>
-        <h3>جرافيكس مظبوط على جهازك</h3>
-        <p>أول تشغيل بيظبط دقة كل محاكي تلقائيًا على قد كرت الشاشة عندك — من غير ما تفتح ملف إعدادات واحد. ولو غيّرت رأيك؟ اختيارك إنت هو اللي بيمشي دايمًا.</p>
-      </div>
-      <div class="feat third reveal">
-        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
-        <h3>متعوب على التليفزيون</h3>
-        <p>وضع التليفزيون (F11) بيحوّل الشاشة لواجهة كبيرة تتشاف من الكنبة، ويد التحكم شغالة: إكس بوكس وبلايستيشن 3 و4 و5 وسويتش برو وأي يد عادية.</p>
-      </div>
-      <div class="feat third reveal">
-        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-6a8 8 0 0116 0v6"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg></div>
-        <h3>واجهة عربي بتحس إنها بتكلمك</h3>
-        <p>كل زرار وكل رسالة بالمصري الواضح — مش ترجمة حرفية نايمة. البرنامج بيقولك بيحصل إيه وبيقترح عليك الخطوة الجاية.</p>
-      </div>
-      <div class="feat half reveal">
-        <div class="shot"><img src="assets/app-gfx.webp" alt="صفحة لازم تعملها" loading="lazy"></div>
-        <h3>«لازم تعملها» — دكتور جوّه البرنامج</h3>
-        <p>حاجة مش شغالة؟ الصفحة دي بتقولك الناقص بالظبط لكل جهاز: محاكي مش متثبت؟ فولدر الألعاب مش متظبط؟ ملف BIOS مش موجود؟ ومع كل حاجة زرار «الحل».</p>
-      </div>
-      <div class="feat half reveal">
-        <div class="shot"><img src="assets/app-convert.webp" alt="تحويل الأقراص إلى CHD" loading="lazy"></div>
-        <h3>حوّل أقراصك لـ CHD</h3>
-        <p>صور الأقراص (ISO وCUE وGDI) تتحول لصيغة CHD المضغوطة بضغطة واحدة وبشريط تقدّم مباشر. الملف الأصلي بيفضل زي ما هو، والنتيجة بتدخل مكتبتك لوحدها.</p>
-      </div>
+    <div class="sec-no">الموقع</div>
+    <h2>كل حاجة في صفحتها</h2>
+    <p class="sec-sub">بدل ما تنزل في صفحة طويلة، كل جزء بقى صفحة لوحده — دوس على اللي يهمك.</p>
+    <div class="pgrid">
+      <a class="pcard" href="features.html">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
+        <b>المميزات</b><span>مكتبة واحدة، محاكيات جاهزة، جرافيكس مظبوط، وواجهة عربي — وشاشات من البرنامج نفسه.</span>
+      </a>
+      <a class="pcard" href="systems.html">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+        <b>الأجهزة</b><span>الـ١٥ جهاز المدعومين، وإيه اللي كل واحد محتاجه من ملفات — من غير كلام مبهّم.</span>
+      </a>
+      <a class="pcard" href="library.html">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6v14H4zM14 5h6v14h-6z"/></svg></div>
+        <b>مكتبة الألعاب</b><span>دوس على أي جهاز تشوف المحاكي بتاعه، صيغ الملفات، ونصايح التشغيل.</span>
+      </a>
+      <a class="pcard" href="guide.html">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg></div>
+        <b>الشرح</b><span>سبع خطوات من التحميل لحد أول لعبة — أغلبهم مرة واحدة في العمر.</span>
+      </a>
+      <a class="pcard" href="downloads.html">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg></div>
+        <b>التحميلات</b><span>النسخة الكاملة والخفيفة، أدلة PDF تتطبع، وروابط المحاكيات الرسمية.</span>
+      </a>
+      <a class="pcard" href="videos.html">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4zM10 9l5 3-5 3z"/></svg></div>
+        <b>الفيديوهات</b><span>الفيديو التعريفي، وشروحات قصيرة للتثبيت والمكتبة والإعدادات.</span>
+      </a>
     </div>
   </div>
 </section>
-<section class="sec" id="systems">
-  <div class="wrap">
-    <div class="sec-no">٠٣ · الأجهزة</div>
-    <h2>١٥ جهاز، مرتّبين حسب العيلة — وبيحصل إيه بالظبط؟</h2>
-    <p class="sec-sub">بكل صراحة: في أجهزة بتشتغل من أول دقيقة، وأجهزة محتاجة ملفات نظام بتجيبها إنت من جهازك القديم. البرنامج بيراجع الملفات بالبصمة وبيقولك إيه الناقص بالاسم. وبلايستيشن 1 معاه كولكشن ألعاب جاهز على Google Drive، تفتحه من كارته في «مكتبة الألعاب».</p>
-    <div class="sys-legend">
-      <span class="chip"><span class="dot" style="background:var(--ok)"></span> بيشتغل من غير أي ملفات زيادة</span>
-      <span class="chip"><span class="dot" style="background:var(--amber)"></span> بيشتغل، وملفات BIOS الاختيارية بتحسّن التوافق</span>
-      <span class="chip"><span class="dot" style="background:var(--warn)"></span> محتاج ملفات نظام من عندك إنت</span>
-    </div>
-    <div class="sys-group reveal">
-      <h4><span class="dot" style="background:var(--ok)"></span> بيشتغلوا على طول</h4>
-      <div class="sys-row">
-        <div class="sys"><span class="dot" style="background:#e8833a"></span><span>أتاري 2600<small>Stella</small></span></div>
-        <div class="sys"><span class="dot" style="background:#3b82f6"></span><span>سيجا جينيسيس<small>RetroArch</small></span></div>
-        <div class="sys"><span class="dot" style="background:#dc2626"></span><span>نينتندو NES<small>RetroArch</small></span></div>
-        <div class="sys"><span class="dot" style="background:#a3a3a3"></span><span>سوبر نينتندو<small>RetroArch</small></span></div>
-        <div class="sys"><span class="dot" style="background:#6366f1"></span><span>نينتندو 64<small>RetroArch</small></span></div>
-        <div class="sys"><span class="dot" style="background:#f43f5e"></span><span>نينتندو 3DS<small>Azahar</small></span></div>
-        <div class="sys"><span class="dot" style="background:#107c10"></span><span>إكس بوكس 360<small>Xenia</small></span></div>
-      </div>
-    </div>
-    <div class="sys-group reveal">
-      <h4><span class="dot" style="background:var(--amber)"></span> بيشتغلوا، وBIOS اختياري بيحسّن</h4>
-      <div class="sys-row">
-        <div class="sys"><span class="dot" style="background:#22c55e"></span><span>PSP<small>PPSSPP</small></span></div>
-        <div class="sys"><span class="dot" style="background:#f59e0b"></span><span>جيم بوي أدفانس<small>mGBA</small></span></div>
-        <div class="sys"><span class="dot" style="background:#14b8a6"></span><span>نينتندو DS<small>melonDS</small></span></div>
-        <div class="sys"><span class="dot" style="background:#fb923c"></span><span>دريم كاست<small>Flycast</small></span></div>
-      </div>
-    </div>
-    <div class="sys-group reveal">
-      <h4><span class="dot" style="background:var(--warn)"></span> محتاجين ملفات من جهازك إنت</h4>
-      <div class="sys-row">
-        <div class="sys"><span class="dot" style="background:#a78bfa"></span><span>بلايستيشن 1<small>DuckStation · ملف BIOS</small></span></div>
-        <div class="sys"><span class="dot" style="background:#2563eb"></span><span>بلايستيشن 2<small>PCSX2 · ملف BIOS</small></span></div>
-        <div class="sys"><span class="dot" style="background:#64748b"></span><span>بلايستيشن 3<small>RPCS3 · فيرموير رسمي</small></span></div>
-        <div class="sys"><span class="dot" style="background:#ef4444"></span><span>نينتندو سويتش<small>Eden · مفاتيح وفيرموير</small></span></div>
-      </div>
-    </div>
-    <div class="sys-note reveal">ملحوظتين مهمين: لـ <b>بلايستيشن 2</b> في وضع بديل بيشتغل من غير BIOS عن طريق محاكي Play! — بيقدّمه لك البرنامج لو حبيت. وأي ملفات BIOS أو فيرموير <b>مش بنزّلها ولا بنجيبها من أي مكان</b> — إنت اللي بتطلّعها من جهازك، والبرنامج بيراجعها بالبصمة ويأكدلك إنها سليمة.</div>
-  </div>
-</section>
-
-<section class="sec" id="library">
-  <div class="wrap">
-    <div class="sec-no">٠٤ · مكتبة الألعاب</div>
-    <h2>اختار الكولكشن اللي عايزه</h2>
-    <p class="sec-sub">دوس على أي جهاز تشوف المحاكي بتاعه، وبيشتغل إزاي، وصيغ الملفات المدعومة. روابط الكولكشن بتفتح Google Drive — اختار الكولكشن اللي عايزه ونزّل منه؛ وكارت بلايستيشن 1 بيفتح مكتبة الألعاب على طول.</p>
-    <div class="con-grid" id="conGrid"></div>
-  </div>
-</section>
-
-<div class="modal" id="conModal" role="dialog" aria-modal="true">
-  <div class="modal-box">
-    <button class="modal-x" id="conModalX" aria-label="اقفل">×</button>
-    <div id="conModalBody"></div>
-  </div>
-</div>
-
-<section class="sec" id="guide">
-  <div class="wrap">
-    <div class="sec-no">٠٥ · الشرح</div>
-    <h2>من التحميل لأول لعبة، في دقايق</h2>
-    <p class="sec-sub">سبع خطوات بس، وأغلبهم بيحصل مرة واحدة في العمر.</p>
-    <div class="steps">
-      <div class="step reveal"><div class="step-n">١</div><div><h3>اختار نسختك وحمّلها</h3><p>من <a href="https://github.com/ZamanGame/zamangames-releases/releases/latest" target="_blank" rel="noopener">صفحة الإصدارات</a> نزّل <code>ZamanGames-Setup-Full-1.3.9.exe</code> لو عايز كل المحاكيات جوه الملف، أو <code>ZamanGames-Setup-1.3.9.exe</code> للنسخة الخفيفة. الاتنين ملف واحد، مش أجزاء ولا فك ضغط.</p></div></div>
-      <div class="step reveal"><div class="step-n">٢</div><div><h3>ثبّت عادي جدًا</h3><p>دبل كليك وكمّل التثبيت زي أي برنامج. التثبيت شغال على ويندوز 10 و11، ولو جهازك ناقصه حزمة Visual C++ من مايكروسوفت، البرنامج بيحمّلها لك من مصدرها الرسمي لوحده.</p></div></div>
-      <div class="step reveal"><div class="step-n">٣</div><div><h3>افتحه أول مرة</h3><p>هيلاقيك جولة تعريفية قصيرة، وبعدين بيظبط إعدادات الجرافيكس لكل محاكي تلقائيًا على قد جهازك — من غير ما تدخل في أي تفاصيل فنية.</p></div></div>
-      <div class="step reveal"><div class="step-n">٤</div><div><h3>قوله ألعابك فين</h3><p>من الإعدادات، ضيف فولدر ألعابك (أو أكتر من فولدر). البرنامج بيفحصهم ويلمّ الألعاب في المكتبة بالأغلفة والأسماء والأجهزة — ولو ضفت ألعاب جديدة بعدين، بيتلمّوا مع أول فحص.</p></div></div>
-      <div class="step reveal"><div class="step-n">٥</div><div><h3>المحاكيات — جاهزة أو بضغطة</h3><p>في النسخة الكاملة تخطّي الخطوة دي: المشغّلات موجودة ومضبوطة من أول تشغيل. في النسخة الخفيفة دوس «ثبّت» جنب أي جهاز؛ التنزيل بيحصل من الموقع الرسمي للمحاكي بس، وبصمة الملف بتتراجع قبل التثبيت.</p></div></div>
-      <div class="step reveal"><div class="step-n">٦</div><div><h3>ملفات BIOS — بتجيبها إنت</h3><p>أجهزة زي بلايستيشن 1 و2 محتاجة ملفات BIOS حقوقها محمية، فإنت اللي بتطلّعها من جهازك إنت. حطّها في فولدر BIOS من جوّه البرنامج، وهو يراجعها بالبصمة ويقولك إيه الناقص بالاسم. البرنامج مبيجيبش الملفات دي من أي مكان — دي قاعدة مش هتتغير.</p></div></div>
-      <div class="step reveal"><div class="step-n">٧</div><div><h3>دوس «العب»</h3><p>خلاص. اختار اللعبة، دوس العب، ولو عندك يد تحكم وصّلها على طول. ولو التليفزيون قدامك، دوس F11 وخدها من الكنبة.</p></div></div>
-    </div>
-  </div>
-</section>
-<section class="sec" id="downloads">
-  <div class="wrap">
-    <div class="sec-no">٠٦ · التحميلات</div>
-    <h2>كل اللي ممكن تحتاجه، في صفحة واحدة</h2>
-    <p class="sec-sub">البرنامج نفسه، أدلة من عندنا تتطبع، برامج مساعدة وتشغيل، والروابط الرسمية لأي حاجة تانية — من غير ما تدور.</p>
-    <div class="dl-grid">
-      <div class="dl">
-        <h3>البرنامج نفسه — نسختان</h3>
-        <p><b>Full (النسخة الكاملة):</b> ملف أكبر لأن كل المشغّلات الرسمية والكورات اللي البرنامج بيستخدمها جوه وجاهزة من أول تشغيل — حط ألعابك ودوس العب. <b>Lite (النسخة الخفيفة):</b> ملف أخف، والمشغّلات بتتنزّل من مواقعها الرسمية بضغطة واحدة من جوّه البرنامج.</p>
-        <div class="row"><a class="btn btn-p" href="https://github.com/ZamanGame/zamangames-releases/releases/latest/download/ZamanGames-Setup-Full-1.3.9.exe" target="_blank" rel="noopener">حمّل النسخة الكاملة (Full)</a></div>
-        <div class="row" style="margin-top:10px"><a class="btn btn-g" href="https://github.com/ZamanGame/zamangames-releases/releases/latest/download/ZamanGames-Setup-1.3.9.exe" target="_blank" rel="noopener">حمّل النسخة الخفيفة (Lite)</a></div>
-        <p style="margin-top:12px;font-size:13px;color:var(--dim)">الاتنين مجانيين، ويندوز 10/11. في كل الأحوال مفيش ألعاب أو BIOS أو فيرموير أو مفاتيح جوه الملف — ملفات BIOS بتاعة PS1/PS2/PS3/Switch لازم تجيبها من جهازك إنت.</p>
-      </div>
-      <div class="dl">
-        <h3>أدلة من عندنا (PDF، تتطبع)</h3>
-        <p>نفس شرح الموقع بس في ورق مرتّب — للي بيحب يقلّب جنب الجهاز.</p>
-        <div class="dl-file"><div><b>دليل البداية السريعة</b><span>من التثبيت لأول لعبة في ٧ خطوات · صفحة واحدة</span></div><a class="btn btn-g" style="padding:8px 16px;font-size:13.5px" href="assets/guides/quick-start.pdf" target="_blank" rel="noopener">افتح</a></div>
-        <div class="dl-file"><div><b>ورقة الاختصارات</b><span>الكيبورد ويد التحكم ووضع التليفزيون · كارت واحد</span></div><a class="btn btn-g" style="padding:8px 16px;font-size:13.5px" href="assets/guides/cheatsheet.pdf" target="_blank" rel="noopener">افتح</a></div>
-      </div>
-      <div class="dl">
-        <h3>برامج مساعدة وتشغيل</h3>
-        <p>لو ويندوز ناقصه حزمة <b>Visual C++ Redistributable</b>، البرنامج بيحمّلها لك تلقائيًا من مصدرها الرسمي أول تشغيل — والرابط تحته لو حبيت تثبّتها بنفسك. وكمان فيه أدوات صغيرة بتفيدك جنب زمان جيمز، متجمّعة في مجلد على Google Drive؛ الموقع مش بيستضيفها، والفتح والتحميل على مسؤوليتك.</p>
-        <div class="dl-file"><div><b>Visual C++ x64 — مايكروسوفت</b><span>الرابط الرسمي المباشر من microsoft.com</span></div><a class="btn btn-g" style="padding:8px 16px;font-size:13.5px" href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" rel="noopener">حمّل</a></div>
-        <div class="row" style="margin-top:12px"><a class="btn btn-g" href="https://drive.google.com/drive/folders/1w4olT_YlfMbp3eTFtiyZD3D2OnvZE_KL?usp=sharing" target="_blank" rel="noopener noreferrer">افتح مجلد البرامج المساعدة</a></div>
-      </div>
-      <div class="dl">
-        <h3>صفحات المحاكيات الرسمية</h3>
-        <p>النسخة الكاملة بتحط كل دول جوه الملف، والنسخة الخفيفة بيثبّتهم بضغطة واحدة من جوّاه — الروابط دي لو حبيت تقرأ عن أي محاكي أو تنزّله بنفسك. كلها المواقع الرسمية:</p>
-        <div class="emu-links">
-          <a href="https://stella-emu.github.io/" target="_blank" rel="noopener">Stella</a>
-          <a href="https://www.retroarch.com/" target="_blank" rel="noopener">RetroArch</a>
-          <a href="https://www.duckstation.org/" target="_blank" rel="noopener">DuckStation</a>
-          <a href="https://pcsx2.net/" target="_blank" rel="noopener">PCSX2</a>
-          <a href="https://www.purei.org/" target="_blank" rel="noopener">Play!</a>
-          <a href="https://rpcs3.net/" target="_blank" rel="noopener">RPCS3</a>
-          <a href="https://www.ppsspp.org/" target="_blank" rel="noopener">PPSSPP</a>
-          <a href="https://eden-emu.dev/" target="_blank" rel="noopener">Eden</a>
-          <a href="https://melonds.kuribo64.net/" target="_blank" rel="noopener">melonDS</a>
-          <a href="https://azahar-emu.org/" target="_blank" rel="noopener">Azahar</a>
-          <a href="https://flycast.org/" target="_blank" rel="noopener">Flycast</a>
-          <a href="https://mgba.io/" target="_blank" rel="noopener">mGBA</a>
-          <a href="https://xenia.jp/" target="_blank" rel="noopener">Xenia</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="videos">
-  <div class="wrap">
-    <div class="sec-no">٠٧ · الفيديوهات</div>
-    <h2>شوف بعينك</h2>
-    <p class="sec-sub">الفيديو التعريفي للبرنامج، وتحته شروحات قصيرة لأهم الخطوات.</p>
-    <div class="vid-grid">
-      <div class="vid-item reveal">
-        <div class="win" style="border:0;border-radius:0">
-          <div class="win-bar"><i></i><i></i><i></i><span>الفيديو التعريفي · ٤٦ ثانية</span></div>
-          <video src="assets/promo.mp4" poster="assets/poster.webp" controls preload="none" playsinline></video>
-        </div>
-        <div class="pad"><h3>ألعاب زمان في ٤٦ ثانية</h3><p>الحكاية كلها: مكتبة واحدة، تثبيت بضغطة، وغلاف لكل لعبة.</p></div>
-      </div>
-      <div class="vid-item reveal">
-        <div class="win" style="border:0;border-radius:0">
-          <div class="win-bar"><i></i><i></i><i></i><span>أول تشغيل · ٢٩ ثانية · تسجيل تجريبي</span></div>
-          <video src="assets/clips/first-run.mp4" poster="assets/clips/first-run.webp" controls preload="none" playsinline></video>
-        </div>
-        <div class="pad"><h3>التثبيت وأول تشغيل</h3><p>من ملف التثبيت لحد ما المكتبة تجهز. <span class="demo-tag">تسجيل حقيقي من البرنامج على جهاز اختبار بملفات تجريبية</span></p></div>
-      </div>
-      <div class="vid-item reveal">
-        <div class="win" style="border:0;border-radius:0">
-          <div class="win-bar"><i></i><i></i><i></i><span>تجميع المكتبة · ٢٦ ثانية · تسجيل تجريبي</span></div>
-          <video src="assets/clips/scan-library.mp4" poster="assets/clips/scan-library.webp" controls preload="none" playsinline></video>
-        </div>
-        <div class="pad"><h3>إضافة الألعاب وملفات BIOS</h3><p>إزاي المكتبة بتتلمّ، وإزاي تجهّز بلايستيشن 1 و2. <span class="demo-tag">تسجيل حقيقي من البرنامج على جهاز اختبار بملفات تجريبية</span></p></div>
-      </div>
-      <div class="vid-item reveal">
-        <div class="win" style="border:0;border-radius:0">
-          <div class="win-bar"><i></i><i></i><i></i><span>جولة الإعدادات · ٢٩ ثانية · تسجيل تجريبي</span></div>
-          <video src="assets/clips/settings.mp4" poster="assets/clips/settings.webp" controls preload="none" playsinline></video>
-        </div>
-        <div class="pad"><h3>جولة في الإعدادات</h3><p>أهم الإعدادات اللي هتحتاجها، بسرعة ومن غير تعقيد. <span class="demo-tag">تسجيل حقيقي من البرنامج على جهاز اختبار بملفات تجريبية</span></p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="faq">
-  <div class="wrap">
-    <div class="sec-no">٠٨ · أسئلة شائعة</div>
-    <h2>اللي ناس كتير بتسأل عنه</h2>
-    <div class="faq">
-      <details class="reveal" open><summary>البرنامج بفلوس؟</summary><div class="ans">لأ، مجاني تمامًا. مفيش إعلانات ولا اشتراكات ولا نسخة "برو".</div></details>
-      <details class="reveal"><summary>بينزّل ألعاب أو ملفات BIOS لوحده؟</summary><div class="ans">لأ، وده قرار متعمد مش هيتغير. الألعاب وملفات BIOS حقوقها لأصحابها، فإنت بتجيب ملفاتك بنفسك. البرنامج بيساعدك بإنه يراجع ملفات BIOS بالبصمة ويقولك إيه الناقص بالاسم — من غير ما يحمّل أي ملف محمي.</div></details>
-      <details class="reveal"><summary>مكتبة الألعاب على Google Drive؟</summary><div class="ans">دوس على كارت بلايستيشن 1 في «مكتبة الألعاب» هيفتح لك مجلد خارجي على Google Drive. الموقع مش بيستضيف أي ملفات، والبرنامج مش بيحمّل ألعاب — المستخدم بيفتح الرابط ويجيب ملفاته بنفسه.</div></details>
-      <details class="reveal"><summary>ليه النسخة الكاملة ملفها كبير؟</summary><div class="ans">لأنها بتحط ١٤ مشغّل رسمي جوه الملف، وأكبرهم RetroArch ومعه الكورات الأربعة اللي البرنامج بيشغّل بيها ألعاب سيجا جينيسيس وNES وسوبر نينتندو وN64؛ معاهم ملفات الداتابيز والشيدرز بتاعة RetroArch. كل ده مشغّلات بس — مفيش ألعاب ولا BIOS ولا فيرموير جوه الملف. لو حجم الملف مهم لك، خد النسخة الخفيفة وحمّل المشغّلات لما تحتاجها.</div></details>
-      <details class="reveal"><summary>شغال على إيه؟</summary><div class="ans">ويندوز 10 أو ويندوز 11 (64-بت). لو ناقص حزمة Visual C++ من مايكروسوفت، التثبيت بيحمّلها لك من مصدرها الرسمي لوحده.</div></details>
-      <details class="reveal"><summary>ضفت ألعابي ومش ظاهرة في المكتبة؟</summary><div class="ans">اتأكد إن الفولدر متضاف من الإعدادات، وإن صيغة الملفات من الصيغ المدعومة للجهاز (زي CHD أو ISO للبلايستيشن). بعدها اعمل فحص تاني للمكتبة. ولو لسه، صفحة «لازم تعملها» هتقولك المشكلة بالظبط.</div></details>
-      <details class="reveal"><summary>اللعبة مش بتشتغل، أعمل إيه؟</summary><div class="ans">افتح صفحة «لازم تعملها» من جوّه البرنامج. هتلاقي كل جهاز وتحته الناقصه بالظبط: محاكي مش متثبت؟ فولدر مش متظبط؟ ملف BIOS مش موجود؟ ومع كل حاجة زرار «الحل». لو معاك النسخة الكاملة، المحاكي هيبقى جاهز وهتظهر بس حاجة BIOS أو الفولدر.</div></details>
-      <details class="reveal"><summary>بيجمع أي بيانات عني؟</summary><div class="ans">لأ. مفيش حسابات ولا تسجيل دخول ولا تتبع — مكتبتك وإعداداتك كلها على جهازك إنت.</div></details>
-    </div>
-  </div>
-</section>
-
 <section class="sec">
   <div class="wrap">
     <div class="banner reveal">
@@ -525,19 +136,31 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
   </div>
 </section>
 
+<div class="next">
+  <a class="next-a" href="index.html"><small>رجوع</small><b>الرئيسية</b></a>
+  <a class="next-a" href="features.html"><small>الخطوة الجاية</small><b>المميزات</b></a>
+</div>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="#top" style="font-size:17px">
+        <a class="logo" href="index.html" style="font-size:17px">
           <img src="assets/logo.webp" alt="" style="width:28px;height:28px;border-radius:8px">
           ألعاب زمان
         </a>
         <div style="margin-top:10px">اتعمل بحب في مصر · سنا للبرمجيات © 2026</div>
       </div>
       <div class="foot-links">
-        <a href="https://github.com/ZamanGame/zamangames-releases/releases/latest" target="_blank" rel="noopener">التحميل</a>
-        <a href="https://github.com/ZamanGame/zamangames-releases" target="_blank" rel="noopener">صفحة الإصدارات</a>
+        <a href="index.html">الرئيسية</a>
+        <a href="features.html">المميزات</a>
+        <a href="systems.html">الأجهزة</a>
+        <a href="library.html">مكتبة الألعاب</a>
+        <a href="guide.html">الشرح</a>
+        <a href="downloads.html">التحميلات</a>
+        <a href="videos.html">الفيديوهات</a>
+        <a href="faq.html">أسئلة شائعة</a>
+        <a href="https://github.com/ZamanGame/zamangames-releases/releases/latest" target="_blank" rel="noopener">صفحة الإصدارات</a>
+        <a href="legal.html">حقوق الملكية والإخلاء</a>
         <a href="mailto:zamangames.eg@gmail.com">zamangames.eg@gmail.com</a>
       </div>
     </div>
@@ -545,56 +168,6 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
   </div>
 </footer>
 
-<script>
-(function(){
-  var systems=[["أتاري 2600","#e8833a"],["سيجا جينيسيس","#3b82f6"],["بلايستيشن 1","#a78bfa"],["بلايستيشن 2","#2563eb"],["بلايستيشن 3","#64748b"],["PSP","#22c55e"],["نينتندو سويتش","#ef4444"],["جيم بوي أدفانس","#f59e0b"],["سوبر نينتندو","#a3a3a3"],["نينتندو NES","#dc2626"],["نينتندو DS","#14b8a6"],["نينتندو 3DS","#f43f5e"],["دريم كاست","#fb923c"],["نينتندو 64","#6366f1"],["إكس بوكس 360","#107c10"]];
-  var track=document.getElementById('tickerTrack'),html='';
-  for(var r=0;r<2;r++){systems.forEach(function(s){html+='<span class="tk-item" dir="rtl"><span class="dot" style="background:'+s[1]+'"></span>'+s[0]+'</span>';});}
-  track.innerHTML=html;
-  var covers=["2600","genesis","super_nintendo_entertainment_system","playstation","playstation_2","playstation_portable","nintendo_64","nintendo_ds","game_boy_advance","dreamcast"],chtml='';
-  for(var c2=0;c2<2;c2++){covers.forEach(function(c){chtml+='<img src="assets/covers/'+c+'.webp" alt="غلاف لعبة - مثال" loading="lazy">';});}
-  document.getElementById('coversTrack').innerHTML=chtml;
-  var CONSOLES=[
- {id:'ps1',en:'PlayStation',ar:'بلايستيشن 1',emu:'DuckStation',c:'#a78bfa',st:'external',exts:['cue','chd','iso','pbp','m3u','bin'],cover:'playstation.webp',hideSt:true,lib:'https://drive.google.com/drive/folders/1sm-amDMtb6_sOXsCrGhUtfpZSXGc9JMj?usp=sharing',g:'محتاج ملف BIOS من جهازك إنت (اسمه بيبدأ بـ scph). حطّه في فولدر BIOS من جوّه البرنامج وهو يراجعه بالبصمة ويقولك لو ناقص. نصيحة: حوّل أقراصك لـ CHD من صفحة التحويل — أخف وأرتب.'},
- {id:'ps2',en:'PlayStation 2',ar:'بلايستيشن 2',emu:'PCSX2',c:'#2563eb',st:'external',exts:['iso','chd','cso','gz','bin'],cover:'playstation_2.webp',g:'محتاج BIOS من جهازك إنت. ولو لسه مجهّزش، في وضع بديل بمحاكي Play! بيشتغل من غير BIOS — البرنامج بيقدّمهولك لو حبيت.'},
- {id:'ps3',en:'PlayStation 3',ar:'بلايستيشن 3',emu:'RPCS3',c:'#64748b',st:'firmware',exts:['iso'],cover:null,g:'RPCS3 محتاج فيرموير PS3 الرسمي، وده بيتثبت من جوّه RPCS3 نفسه بملف من عندك إنت — البرنامج مبيتعاملش معاه خالص. الألعاب بصيغة ISO.'},
- {id:'psp',en:'PSP',ar:'بلايستيشن بورتابل',emu:'PPSSPP',c:'#22c55e',st:'none',exts:['iso','cso','pbp'],cover:'playstation_portable.webp',g:'جاهز من أول ثانية من غير أي ملفات. صيغة cso المضغوطة شغالة برضه لو عايز توفّر مساحة.'},
- {id:'nes',en:'NINTENDO NES',ar:'نينتندو NES',emu:'RetroArch · FCEUmm',c:'#dc2626',st:'none',exts:['nes','zip','7z'],cover:'nes.webp',g:'من غير أي ملفات — حط الألعاب والعب.'},
- {id:'snes',en:'SUPER NINTENDO',ar:'سوبر نينتندو',emu:'RetroArch · Snes9x',c:'#a3a3a3',st:'none',exts:['sfc','smc','zip','7z'],cover:'super_nintendo_entertainment_system.webp',g:'من غير أي ملفات. sfc وsmc شغالين.'},
- {id:'n64',en:'NINTENDO 64',ar:'نينتندو 64',emu:'RetroArch · Mupen64Plus-Next',c:'#6366f1',st:'none',exts:['n64','z64','v64'],cover:'nintendo_64.webp',g:'من غير أي ملفات. مهم: خلي الألعاب مفكوكة (n64/z64/v64) — الملفات المضغوطة zip مش مضمونة هنا.'},
- {id:'gba',en:'GAME BOY ADVANCE',ar:'جيم بوي أدفانس',emu:'mGBA',c:'#f59e0b',st:'builtin',exts:['gba','zip','7z'],cover:'game_boy_advance.webp',g:'بيشتغل من غير أي حاجة. في ملف BIOS اختياري لعشّاق الدقة الكاملة.'},
- {id:'ds',en:'NINTENDO DS',ar:'نينتندو DS',emu:'melonDS',c:'#14b8a6',st:'builtin',exts:['nds','zip'],cover:'nintendo_ds.webp',g:'بيشتغل على طول، وملفات BIOS الاختيارية (bios7 وbios9 وfirmware) بتحسّن التوافق مع بعض الألعاب.'},
- {id:'3ds',en:'NINTENDO 3DS',ar:'نينتندو 3DS',emu:'Azahar',c:'#f43f5e',st:'none',exts:['3ds','3dsx','cci','cxi','cia'],cover:null,g:'من غير أي ملفات — حط الألعاب والعب.'},
- {id:'switch',en:'NINTENDO SWITCH',ar:'نينتندو سويتش',emu:'Eden',c:'#ef4444',st:'firmware',exts:['nsp','xci'],cover:null,g:'محتاج مفاتيح وفيرموير من جهازك إنت (prod.keys وtitle.keys). البرنامج بيرشدك لمكانهم وبيأكدلك إنهم سليمين — ومبيجيبهمش من أي مكان.'},
- {id:'genesis',en:'SEGA GENESIS',ar:'سيجا جينيسيس',emu:'RetroArch · Genesis Plus GX',c:'#3b82f6',st:'none',exts:['md','gen','smd','bin','zip','7z'],cover:'genesis.webp',g:'شغال من غير أي ملفات. صيغ md وbin وsmd كلها متغطية.'},
- {id:'dc',en:'DREAMCAST',ar:'دريم كاست',emu:'Flycast',c:'#fb923c',st:'builtin',exts:['gdi','cdi','chd','cue'],cover:'dreamcast.webp',g:'بيشتغل على طول، وملفات BIOS الاختيارية (dc_boot وdc_flash) بتدي توافق أعلى مع بعض الألعاب.'},
- {id:'atari',en:'ATARI 2600',ar:'أتاري 2600',emu:'Stella',c:'#e8833a',st:'none',exts:['a26','bin','zip','7z'],cover:'2600.webp',g:'أقدم جهاز في العيلة وأخفهم. مفيش أي ملفات مطلوبة — حط الألعاب في الفولدر والعب على طول.'},
- {id:'xbox360',en:'XBOX 360',ar:'إكس بوكس 360',emu:'Xenia',c:'#107c10',st:'none',exts:['iso','xex','zar'],cover:null,g:'من غير أي ملفات نهائي. ملحوظة: اسم ملف اللعبة ميفضلش فيه نقط زيادة قبل الامتداد — Xenia بترفض الأسماء دي.'}
-];
-  var STL={none:['var(--ok)','من غير ملفات زيادة'],builtin:['var(--amber)','بيشتغل + BIOS اختياري'],external:['var(--warn)','محتاج BIOS من جهازك'],firmware:['var(--warn)','محتاج فيرموير/مفاتيح']};
-  var grid=document.getElementById('conGrid'),gh='';
-  CONSOLES.forEach(function(x,i){gh+='<div class="con reveal" data-i="'+i+'" style="--c:'+x.c+'"'+(x.lib?' role="link" title="مكتبة الألعاب على Google Drive" aria-label="'+x.ar+' — افتح مكتبة الألعاب على Google Drive"':'')+'><div class="con-art"><img class="con-shot" src="assets/consoles/'+x.id+'.webp" alt="" loading="lazy"></div><div class="con-logo"><img src="assets/devices/'+x.id+'.webp" alt="" loading="lazy"></div><div class="wm2" dir="ltr">'+x.en+'</div><div class="ar">'+x.ar+'</div>'+(x.hideSt?'':'<div class="st"><span class="dot" style="background:'+STL[x.st][0]+'"></span>'+STL[x.st][1]+'</div>')+'</div>';});
-  grid.innerHTML=gh;
-  var modal=document.getElementById('conModal'),mbody=document.getElementById('conModalBody');
-  function openCon(i){var x=CONSOLES[i];if(!x||x.lib)return;var ex='';x.exts.forEach(function(e){ex+='<code>'+e+'</code>';});
-    var cov=x.cover?'<img class="m-cover" src="assets/covers/'+x.cover+'" alt="غلاف مثال">':'<div class="m-cover ph" style="color:'+x.c+'" dir="ltr">'+x.en+'</div>';
-    mbody.innerHTML='<div class="m-head"><div class="m-visual"><div class="con-art"><img class="con-shot" src="assets/consoles/'+x.id+'.webp" alt=""></div><div class="con-logo"><img src="assets/devices/'+x.id+'.webp" alt=""></div></div><div class="wm3" style="color:'+x.c+'" dir="ltr">'+x.en+'</div><div><div style="font-weight:900;font-size:19px">'+x.ar+'</div><span class="st" style="margin-top:6px"><span class="dot" style="background:'+STL[x.st][0]+'"></span>'+STL[x.st][1]+'</span></div></div>'
-    +'<div class="m-body">'+cov+'<div class="m-rows">'
-    +'<div class="m-row"><b>المحاكي</b><span class="v" dir="ltr" style="text-align:end">'+x.emu+'</span></div>'
-    +'<div class="m-row"><b>التثبيت</b><span class="v">بضغطة واحدة من جوّه البرنامج، من الموقع الرسمي للمحاكي وبمراجعة بصمة الملف</span></div>'
-    +'<div class="m-row"><b>صيغ الألعاب</b><span class="v">'+ex+'</span></div>'
-    +'</div></div><div class="m-guide"><b>نصايح التشغيل:</b> '+x.g+'</div>';
-    modal.classList.add('open');document.body.style.overflow='hidden';}
-  function closeCon(){modal.classList.remove('open');document.body.style.overflow='';}
-  grid.addEventListener('click',function(e){var t=e.target.closest('.con');if(t){var x=CONSOLES[+t.dataset.i];if(x.lib){window.open(x.lib,'_blank','noopener,noreferrer');}else{openCon(+t.dataset.i);}}});
-  document.getElementById('conModalX').addEventListener('click',closeCon);
-  modal.addEventListener('click',function(e){if(e.target===modal)closeCon();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCon();});
-  var _m=new URLSearchParams(location.search).get('modal');if(_m!==null)openCon(+_m);
-  if(/snap/.test(location.search)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('on');});return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
