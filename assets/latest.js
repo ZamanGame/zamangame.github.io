@@ -1,8 +1,7 @@
 /*
  * يخلي أزرار التحميل تابع آخر إصدار على GitHub.
  * بينده على GitHub API، ولو مفيش نت أو حصل خطأ، الروابط الثابتة اللي في الصفحة تفضل شغالة زي ما هي.
- * زرار Lite بيلاقي ملف ZamanGames-Setup-<version>.exe، وزرار Full بيلاقي ZamanGames-Setup-Full-<version>.exe بالاسم.
- * لو آخر إصدار مفيهوش ملف Full لسه، زرار Full يفضل واقف على آخر نسخة Full معروفة (المكتوبة في الصفحة).
+ * الزرار بيلاقي ملف ZamanGames-Windows-v<version>.zip بالاسم.
  * مفيش حجم صفري أو فاضي بيظهر أبدًا: لو الحجم مش معروف، مكانه بيختفي.
  */
 (function () {
@@ -60,22 +59,13 @@
       if (!version) return;
       setText('.js-ver-hero', 'آخر إصدار: ' + version);
       setText('.js-ver', 'الإصدار ' + version);
-      setText('.js-ver-full', 'الإصدار ' + version);
 
-      // Lite: ZamanGames-Setup-1.4.2.exe (من غير Full في الاسم، ومش ملف البصمة)
-      var lite = pick(rel.assets, /^ZamanGames-Setup-(?!Full)[^/]*\.exe$/i);
-      if (lite) {
-        setHrefs('a.js-dl', lite.browser_download_url);
-        setSize('.js-size', lite.size);
+      // الإصدار الواحد: ZamanGames-Windows-v1.0.0.zip (ملف مضغوط، مش ملف البصمة)
+      var app = pick(rel.assets, /^ZamanGames-Windows-v[^/]*\.zip$/i);
+      if (app) {
+        setHrefs('a.js-dl', app.browser_download_url);
+        setSize('.js-size', app.size);
         setText('.js-ver', 'الإصدار ' + version);
-      }
-
-      // Full: ZamanGames-Setup-Full-1.4.2.exe بالاسم؛ لو مش موجود في آخر إصدار، سيب الرابط الثابت زي ما هو
-      var full = pick(rel.assets, /^ZamanGames-Setup-Full-[^/]*\.exe$/i);
-      if (full) {
-        setHrefs('a.js-dl-full', full.browser_download_url);
-        setSize('.js-size-full', full.size);
-        setText('.js-ver-full', 'الإصدار ' + version);
       }
     })
     .catch(function () { /* الروابط الثابتة في الصفحة تفضل شغالة */ });
