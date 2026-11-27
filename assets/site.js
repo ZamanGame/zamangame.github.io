@@ -90,8 +90,8 @@
   document.getElementById('conModalX').addEventListener('click', closeCon);
   modal.addEventListener('click', function (e) { if (e.target === modal) closeCon(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCon(); });
-  var m = new URLSearchParams(location.search).get('modal');
-  if (m !== null) openCon(+m);
+  // Deep links such as ?modal=4 are intentionally ignored: PS1 opens its Drive
+  // library directly and every other card opens from a real user click.
   }
 
   /* ---- reveal on scroll ---- */
