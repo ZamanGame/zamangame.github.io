@@ -56,6 +56,9 @@
       if (!rel || !rel.tag_name || !rel.assets) return;
       var version = String(rel.tag_name).replace(/^v/, '');
       if (!version) return;
+      setText('.js-ver-hero', 'آخر إصدار: ' + version);
+      setText('.js-ver', 'الإصدار ' + version);
+      setText('.js-ver-full', 'الإصدار ' + version);
 
       // Lite: ZamanGames-Setup-1.4.2.exe (من غير Full في الاسم، ومش ملف البصمة)
       var lite = pick(rel.assets, /^ZamanGames-Setup-(?!Full)[^/]*\.exe$/i);
