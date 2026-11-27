@@ -255,3 +255,8 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
   .phead h1{font-size:clamp(26px,7vw,34px)}
 }
 .dl-size{display:inline-flex;align-items:baseline}
+
+.hdr-soc{display:flex;gap:6px;align-items:center}
+.hdr-soc a{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;color:var(--mut);border:1px solid var(--line)}
+.hdr-soc a:hover{color:var(--txt);border-color:var(--line2)}
+@media(max-width:900px){.hdr-soc{display:none}}
