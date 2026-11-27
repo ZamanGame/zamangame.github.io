@@ -19,7 +19,7 @@
     if (!bytes || !(bytes > 0)) return '';
     var mb = Math.round(bytes / 1000000);
     if (!(mb > 0)) return '';
-    return '· ' + arNum(mb) + ' ميجا';
+    return arNum(mb) + ' ميجا';
   }
 
   function setText(selector, text) {
@@ -30,10 +30,12 @@
   function setSize(selector, bytes) {
     var label = sizeLabel(bytes);
     document.querySelectorAll(selector).forEach(function (el) {
+      var wrap = el.closest('.dl-size') || el;
       if (label) {
         el.textContent = label;
+        wrap.style.display = '';
       } else {
-        el.style.display = 'none';
+        wrap.style.display = 'none';
       }
     });
   }
