@@ -261,3 +261,4 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
 .hdr-soc a:hover{color:var(--txt);border-color:var(--line2)}
 @media(max-width:900px){.hdr-soc{display:none}}
 .foot-links a.foot-soc{display:inline-flex;align-items:center;gap:7px}
+.foot-socials{display:flex;gap:10px;margin-top:14px}.foot-socials a.foot-soc{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border:1px solid var(--line);border-radius:10px;color:var(--mut);font-size:14px}.foot-socials a.foot-soc:hover{color:var(--txt);border-color:var(--line2)}
