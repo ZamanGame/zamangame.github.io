@@ -39,7 +39,7 @@
   if (grid) {
 
   var CONSOLES = [
-    { id: 'ps1', en: 'PlayStation', ar: 'بلايستيشن 1', emu: 'DuckStation', c: '#a78bfa', st: 'external', exts: ['cue', 'chd', 'iso', 'pbp', 'm3u', 'bin'], cover: 'playstation.webp', hideSt: true, dl: 'https://chdstation.com/ps1-chd', lib: 'https://drive.google.com/drive/folders/1sm-amDMtb6_sOXsCrGhUtfpZSXGc9JMj?usp=sharing', g: 'محتاج ملف BIOS من جهازك إنت (اسمه بيبدأ بـ scph). حطّه في فولدر BIOS من جوّه البرنامج وهو يراجعه بالبصمة ويقولك لو ناقص. نصيحة: حوّل أقراصك لـ CHD من صفحة التحويل — أخف وأرتب.' },
+    { id: 'ps1', en: 'PlayStation', ar: 'بلايستيشن 1', emu: 'DuckStation', c: '#a78bfa', st: 'external', exts: ['cue', 'chd', 'iso', 'pbp', 'm3u', 'bin'], cover: 'playstation.webp', hideSt: true, dl: 'https://chdstation.com/ps1-chd', g: 'محتاج ملف BIOS من جهازك إنت (اسمه بيبدأ بـ scph). حطّه في فولدر BIOS من جوّه البرنامج وهو يراجعه بالبصمة ويقولك لو ناقص. نصيحة: حوّل أقراصك لـ CHD من صفحة التحويل — أخف وأرتب.' },
     { id: 'ps2', en: 'PlayStation 2', ar: 'بلايستيشن 2', emu: 'PCSX2', c: '#2563eb', st: 'external', exts: ['iso', 'chd', 'cso', 'gz', 'bin'], cover: 'playstation_2.webp', dl: 'https://chdstation.com/ps2-chd', g: 'محتاج BIOS من جهازك إنت. ولو لسه مجهّزش، في وضع بديل بمحاكي Play! بيشتغل من غير BIOS — البرنامج بيقدّمهولك لو حبيت.' },
     { id: 'ps3', en: 'PlayStation 3', ar: 'بلايستيشن 3', emu: 'RPCS3', c: '#64748b', st: 'firmware', exts: ['iso'], cover: null, dl: 'https://romsfun.com/roms/ps3/', g: 'RPCS3 محتاج فيرموير PS3 الرسمي، وده بيتثبت من جوّه RPCS3 نفسه بملف من عندك إنت — البرنامج مبيتعاملش معاه خالص. الألعاب بصيغة ISO.' },
     { id: 'psp', en: 'PSP', ar: 'بلايستيشن بورتابل', emu: 'PPSSPP', c: '#22c55e', st: 'none', exts: ['iso', 'cso', 'pbp'], cover: 'playstation_portable.webp', dl: 'https://chdstation.com/psp-chd', g: 'جاهز من أول ثانية من غير أي ملفات. صيغة cso المضغوطة شغالة برضه لو عايز توفّر مساحة.' },
@@ -79,7 +79,6 @@
     else if (x.dl.indexOf('romsgames.net') > -1) dlName = 'RomsGames';
     else if (x.dl.indexOf('romspedia.com') > -1) dlName = 'Romspedia';
     var dl = '<div class="m-actions"><a class="btn btn-p m-dl" href="' + x.dl + '" target="_blank" rel="noopener noreferrer">افتح قسم التحميل</a>'
-      + (x.lib ? '<a class="btn btn-g m-dl" href="' + x.lib + '" target="_blank" rel="noopener noreferrer">مكتبة الألعاب على Google Drive</a>' : '')
       + '<small>قسم التحميل على ' + dlName + ' — رابط خارجي، فتحه وتحميله على مسؤوليتك، والموقع مش بيستضيف أي ملفات ألعاب.</small></div>';
     mbody.innerHTML = '<div class="m-head"><div class="m-visual"><div class="con-art"><img class="con-shot" src="assets/consoles/' + x.id + '.webp" alt=""></div><div class="con-logo"><img src="assets/devices/' + x.id + '.webp" alt=""></div></div><div class="wm3" style="color:' + x.c + '" dir="ltr">' + x.en + '</div><div><div style="font-weight:900;font-size:19px">' + x.ar + '</div><span class="st" style="margin-top:6px"><span class="dot" style="background:' + STL[x.st][0] + '"></span>' + STL[x.st][1] + '</span></div></div>'
       + '<div class="m-body">' + cov + '<div class="m-rows">'
