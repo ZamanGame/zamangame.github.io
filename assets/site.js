@@ -30,7 +30,7 @@
   var coversTrack = document.getElementById('coversTrack');
   if (coversTrack) {
     var chtml = '';
-    for (var c2 = 0; c2 < 2; c2++) { covers.forEach(function (c) { chtml += '<img src="assets/covers/' + c + '.webp" alt="غلاف لعبة - مثال" loading="lazy">'; }); }
+    for (var c2 = 0; c2 < 2; c2++) { covers.forEach(function (c) { chtml += '<img src="assets/covers/' + c + '.webp?v=2" alt="غلاف لعبة - مثال" loading="lazy">'; }); }
     coversTrack.innerHTML = chtml;
   }
 
@@ -72,7 +72,7 @@
   function openCon(i) {
     var x = CONSOLES[i]; if (!x) return;
     var ex = ''; x.exts.forEach(function (e) { ex += '<code>' + e + '</code>'; });
-    var cov = x.cover ? '<img class="m-cover" src="assets/covers/' + x.cover + '" alt="غلاف مثال">' : '<div class="m-cover ph" style="color:' + x.c + '" dir="ltr">' + x.en + '</div>';
+    var cov = x.cover ? '<img class="m-cover" src="assets/covers/' + x.cover + '?v=2" alt="غلاف مثال">' : '<div class="m-cover ph" style="color:' + x.c + '" dir="ltr">' + x.en + '</div>';
     var dlName = 'موقع خارجي';
     if (x.dl.indexOf('chdstation.com') > -1) dlName = 'CHD Station';
     else if (x.dl.indexOf('romsfun.com') > -1) dlName = 'ROMSFUN';
