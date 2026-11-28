@@ -63,7 +63,7 @@
   };
   var gh = '';
   CONSOLES.forEach(function (x, i) {
-    gh += '<div class="con reveal" data-i="' + i + '" style="--c:' + x.c + '" role="button" tabindex="0" aria-label="' + x.ar + ' — اعرض التفاصيل وقسم التحميل"><div class="con-art"><img class="con-shot" src="assets/consoles/' + x.id + '.webp" alt="" loading="lazy"></div><div class="con-logo"><img src="assets/devices/' + x.id + '.webp" alt="" loading="lazy"></div><div class="wm2" dir="ltr">' + x.en + '</div><div class="ar">' + x.ar + '</div>' + (x.hideSt ? '' : '<div class="st"><span class="dot" style="background:' + STL[x.st][0] + '"></span>' + STL[x.st][1] + '</div>') + '</div>';
+    gh += '<div class="con reveal" data-i="' + i + '" style="--c:' + x.c + '" role="button" tabindex="0" aria-label="' + x.ar + ' — اعرض التفاصيل وقسم التحميل"><div class="con-art"><img class="con-shot" src="assets/consoles/' + x.id + '.webp" alt="" loading="lazy"></div><div class="con-logo"><img src="assets/devices/' + x.id + '.webp" alt="" loading="lazy"></div><div class="wm2" dir="ltr">' + x.en + '</div>' + (x.hideSt ? '' : '<div class="st"><span class="dot" style="background:' + STL[x.st][0] + '"></span>' + STL[x.st][1] + '</div>') + '</div>';
   });
   grid.innerHTML = gh;
 
