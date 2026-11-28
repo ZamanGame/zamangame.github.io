@@ -197,6 +197,9 @@ footer{border-top:1px solid var(--line);margin-top:90px;padding:44px 0 34px;colo
 .m-row .v code{background:rgba(77,163,255,.1);border:1px solid var(--line);border-radius:6px;padding:0 7px;font-size:12px;direction:ltr;display:inline-block;margin:1px}
 .m-guide{margin-top:16px;border:1px dashed var(--line2);border-radius:13px;padding:13px 16px;color:var(--mut);font-size:14px;background:rgba(16,26,51,.4)}
 .m-guide b{color:var(--amber)}
+.m-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.m-actions small{width:100%;color:var(--dim);font-size:12.5px;line-height:1.7}
+.m-dl{padding:9px 16px;font-size:13.5px}
 @media(max-width:640px){.m-body{grid-template-columns:1fr}.m-cover{width:130px}}
 
 /* ===== multi-page additions ===== */
