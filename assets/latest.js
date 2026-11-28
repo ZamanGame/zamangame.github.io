@@ -8,17 +8,11 @@
   'use strict';
 
   var API = 'https://api.github.com/repos/ZamanGame/zamangames-releases/releases/latest';
-  var AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
-
-  function arNum(s) {
-    return String(s).replace(/[0-9]/g, function (d) { return AR_DIGITS[+d]; });
-  }
-
   function sizeLabel(bytes) {
     if (!bytes || !(bytes > 0)) return '';
     var mb = Math.round(bytes / 1000000);
     if (!(mb > 0)) return '';
-    return arNum(mb) + ' ميجا';
+    return String(mb) + ' ميجا';
   }
 
   function setText(selector, text) {
