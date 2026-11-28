@@ -39,7 +39,7 @@
   if (grid) {
 
   var CONSOLES = [
-    { id: 'ps1', en: 'PlayStation', ar: 'بلايستيشن 1', emu: 'DuckStation', c: '#a78bfa', st: 'external', exts: ['cue', 'chd', 'iso', 'pbp', 'm3u', 'bin'], cover: 'playstation.webp', hideSt: true, dl: 'https://chdstation.com/ps1-chd', g: 'محتاج ملف BIOS من جهازك إنت (اسمه بيبدأ بـ scph). حطّه في فولدر BIOS من جوّه البرنامج وهو يراجعه بالبصمة ويقولك لو ناقص. نصيحة: حوّل أقراصك لـ CHD من صفحة التحويل — أخف وأرتب.' },
+    { id: 'ps1', en: 'PlayStation', ar: 'بلايستيشن 1', emu: 'DuckStation', c: '#a78bfa', st: 'external', exts: ['cue', 'chd', 'iso', 'pbp', 'm3u', 'bin'], cover: 'playstation.webp', dl: 'https://chdstation.com/ps1-chd', g: 'محتاج ملف BIOS من جهازك إنت (اسمه بيبدأ بـ scph). حطّه في فولدر BIOS من جوّه البرنامج وهو يراجعه بالبصمة ويقولك لو ناقص. نصيحة: حوّل أقراصك لـ CHD من صفحة التحويل — أخف وأرتب.' },
     { id: 'ps2', en: 'PlayStation 2', ar: 'بلايستيشن 2', emu: 'PCSX2', c: '#2563eb', st: 'external', exts: ['iso', 'chd', 'cso', 'gz', 'bin'], cover: 'playstation_2.webp', dl: 'https://chdstation.com/ps2-chd', g: 'محتاج BIOS من جهازك إنت. ولو لسه مجهّزش، في وضع بديل بمحاكي Play! بيشتغل من غير BIOS — البرنامج بيقدّمهولك لو حبيت.' },
     { id: 'ps3', en: 'PlayStation 3', ar: 'بلايستيشن 3', emu: 'RPCS3', c: '#64748b', st: 'firmware', exts: ['iso'], cover: null, dl: 'https://romsfun.com/roms/ps3/', g: 'RPCS3 محتاج فيرموير PS3 الرسمي، وده بيتثبت من جوّه RPCS3 نفسه بملف من عندك إنت — البرنامج مبيتعاملش معاه خالص. الألعاب بصيغة ISO.' },
     { id: 'psp', en: 'PSP', ar: 'بلايستيشن بورتابل', emu: 'PPSSPP', c: '#22c55e', st: 'none', exts: ['iso', 'cso', 'pbp'], cover: 'playstation_portable.webp', dl: 'https://chdstation.com/psp-chd', g: 'جاهز من أول ثانية من غير أي ملفات. صيغة cso المضغوطة شغالة برضه لو عايز توفّر مساحة.' },
@@ -63,7 +63,7 @@
   };
   var gh = '';
   CONSOLES.forEach(function (x, i) {
-    gh += '<div class="con reveal" data-i="' + i + '" style="--c:' + x.c + '" role="button" tabindex="0" aria-label="' + x.ar + ' — اعرض التفاصيل وقسم التحميل"><div class="con-art"><img class="con-shot" src="assets/consoles/' + x.id + '.webp" alt="" loading="lazy"></div><div class="con-logo"><img src="assets/devices/' + x.id + '.webp" alt="" loading="lazy"></div><div class="wm2" dir="ltr">' + x.en + '</div>' + (x.hideSt ? '' : '<div class="st"><span class="dot" style="background:' + STL[x.st][0] + '"></span>' + STL[x.st][1] + '</div>') + '</div>';
+    gh += '<div class="con reveal" data-i="' + i + '" style="--c:' + x.c + '" role="button" tabindex="0" aria-label="' + x.ar + ' — اعرض التفاصيل وقسم التحميل"><div class="con-art"><img class="con-shot" src="assets/consoles/' + x.id + '.webp" alt="" loading="lazy"></div><div class="con-logo"><img src="assets/devices/' + x.id + '.webp" alt="" loading="lazy"></div><div class="wm2" dir="ltr">' + x.en + '</div><div class="ar">' + x.ar + '</div></div>';
   });
   grid.innerHTML = gh;
 
